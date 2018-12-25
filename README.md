@@ -9,8 +9,8 @@
 
 ### Procedures:<br>
 1. Smallest CP detection (with extra CP appended)<br>
-2. Channel distortion coefficients <img src="http://www.forkosh.com/mathtex.cgi? $H(j\omega)$"> detection<br>
-3. Original signal <img src="http://www.forkosh.com/mathtex.cgi? $X(j\omega)$">) reconstruction
+2. Channel distortion coefficients H(jw) detection<br>
+3. Original signal X(jw) reconstruction
 <br><br>
 
 ### Error Comparison:<br>
