@@ -2,7 +2,7 @@
 ****
 **Author:<br>**
 **Yunong Wang @DrippySummer (KLDistance)<br>**
-**Zhaoqing Xu @Person Xu<br><br>**
+**Zhaoqing Xu @Pearson Xu<br><br>**
 **Dec, 23, 2018<br><br>**
 **Entry Script: OFDMOverall.m<br>**
 **Open .m files with MATLAB with 2013 or later version<br>**
