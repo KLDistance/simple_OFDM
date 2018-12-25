@@ -7,12 +7,10 @@
 **Entry Script: OFDMOverall.m<br>**
 **Open .m files with MATLAB with 2013 or later version<br>**
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
 ### Procedures:<br>
 1. Smallest CP detection (with extra CP appended)<br>
-2. Channel distortion coefficients \\(H(j\omega)\\) detection<br>
-3. Original signal \\(X(j\omega)\\) reconstruction
+2. Channel distortion coefficients <img src="http://www.forkosh.com/mathtex.cgi? $H(j\omega)$"> detection<br>
+3. Original signal <img src="http://www.forkosh.com/mathtex.cgi? $X(j\omega)$">) reconstruction
 <br><br>
 
 ### Error Comparison:<br>
