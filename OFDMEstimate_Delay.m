@@ -13,17 +13,12 @@ pilot_DAC_signal = DAC(pilot_pulse, DAC_elapse_period_us, sampling_us);
 pilot_AM_signal = TransFront(pilot_DAC_signal);
 % channel distortion
 pilot_channel_signal = ChannelDistortion(pilot_AM_signal, DAC_elapse_period_us, sampling_us);
-figure(3);
-stem(pilot_channel_signal);
 % demodulation
-pilot_recv_analog_signal = RecvFront_Delay(pilot_channel_signal, sampling_us);
+pilot_recv_analog_signal = RecvFront_Delay(pilot_channel_signal, DAC_elapse_period_us, sampling_us);
 % ADC
 pilot_recv_pulse_chain = ADC(pilot_recv_analog_signal, DAC_elapse_period_us, sampling_us);
-figure(4);
-stem(abs(pilot_recv_pulse_chain));
 % detect cp number
-nonzero_recv_pilot_pulse = pilot_recv_pulse_chain(abs(pilot_recv_pulse_chain) > 1E-8);
+nonzero_recv_pilot_pulse = pilot_recv_pulse_chain(abs(pilot_recv_pulse_chain) > 1E-3);
 estimate_delay_number = length(nonzero_recv_pilot_pulse) - 1;
 
 end
-

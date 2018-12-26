@@ -1,11 +1,9 @@
 clear;
 
 %% parameter settings
-% set global sampling rate and elapse time for ADC, DACs
-sampling_us = 0.001;
-DAC_elapse_period_us = 1;
-% extra cp appended
-extra_cp_number = 2;
+sampling_us = 0.001; % sampling rate in 1E-6s time unit
+DAC_elapse_period_us = 1; % DAC pulse elapse in 1E-6 time unit
+extra_cp_number = 0; % extra cp appended
 %% CP detection
 % generate pilot pulse
 pilot_pulse = [1, zeros(1, 31)];
@@ -17,8 +15,8 @@ delay_number = OFDMEstimate_Delay( ...
 );
 %% H(jw) detection
 % randomly generate pilot pulses for coefficients detection
-% -1 to 1 integer random numbers are generated
-random_pulse = rand(1, 32) * 1 - 0;
+% 0.2 to 0.8 random numbers are generated
+random_pulse = rand(1, 32) * 0.8 + 0.2;
 % obtian pilot pulse for coefficients detection use
 estimate_ht_coefficients = OFDMEstimate_Coeff( ...
     random_pulse, ...
@@ -29,7 +27,7 @@ estimate_ht_coefficients = OFDMEstimate_Coeff( ...
 );
 %% X(jw) reconstruct
 % randomly generate data symbols 
-data_symbols = rand(1, 32) * 1 - 0;
+data_symbols = rand(1, 32) * 0.8 + 0.2;
 % transmit and reconstruct data symbols based on known cp and coeffs
 recv_data_symbols = OFDMTrans( ...
     data_symbols, ...

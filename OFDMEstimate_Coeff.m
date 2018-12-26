@@ -6,10 +6,6 @@ function [ht_coefficients] = OFDMEstimate_Coeff( ...
     sampling_us ...
 )
 % OFDMEstimate_Coeff. Estimate the coefficients of h(t)
-
-% For coefficient estimation of h(t), the effects of cp and fft/ifft pair 
-% have to be considered.
-
 % ifft
 pilot_ifft_signal = ifft(pilot_pulse);
 % add cp
@@ -32,6 +28,5 @@ pilot_delay_eliminate = pilot_cp_eliminate(1 : (length(pilot_cp_eliminate) - del
 pilot_recv = fft(pilot_delay_eliminate);
 % extract coefficients from random pilot
 ht_coefficients = pilot_recv ./ pilot_pulse / 32;
-
 end
 

@@ -8,7 +8,6 @@ function [symbol_recv] = OFDMTrans( ...
 )
 % OFDMTrans. Generate FD-based TD-form digital signals against ISI based on
 % OFDM CP and coefficients estimation
-
 % ifft
 symbol_ifft_signal = ifft(data_symbols);
 % add cp
@@ -31,5 +30,4 @@ symbol_delay_eliminate = symbol_cp_eliminate(1, 1 : (length(symbol_cp_eliminate)
 symbol_recv_primitive = fft(symbol_delay_eliminate);
 % reconstruct using ht' coefficients
 symbol_recv = symbol_recv_primitive ./ ht_coeff / 32;
-
 end
